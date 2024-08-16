@@ -29,6 +29,9 @@ jobs:
     docker_build: 
         runs-on: ubuntu-latest
         
-        steps: 
-        - name: Build Docker image
-          run: docker build -t flask-app .
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v3
+
+            - name: Build Docker image
+              run: docker build -t flask-app .
